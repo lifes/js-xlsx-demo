@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script type="text/javascript" src="xlsx.full.min.js"></script>
+        <script src="FileSaver.js"></script>
+        <script src="dataExportHelper.js"></script>
+    </head>
+    
+<body>
+    <button id="cx">点击生成xlsx文件</button>
+    <script type="text/javascript">
+        document.getElementById("cx").onclick = function(){
+            
+            alert("点击确认开始导出");
+
+            var opts = [{"title":"用户名","key":"username","render":function(value){return value;}},{"title":"密码","key":"password","render":function(value){return value;}}]
+            var data = [{"username":"陈华明","password":"001"},{"username":"chenhuaming","password":"001"}];
+            dataExportHelper.saveAsCsv(opts, data, "测试test.csv");
+        }              
+    </script>
+</body>
+</html>
